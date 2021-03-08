@@ -1,5 +1,4 @@
 import textwrap
-from collections import namedtuple
 import os
 from PIL import Image, ImageDraw
 from PIL import ImageFont
