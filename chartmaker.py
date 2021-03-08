@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw
 from PIL import ImageFont
 import requests
-import numpy as np
 import math
 
 def radchar(data:dict,size:tuple,textcolour):
