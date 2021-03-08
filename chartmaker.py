@@ -1,14 +1,20 @@
+import textwrap
+from collections import namedtuple
+import os
 from PIL import Image, ImageDraw
 from PIL import ImageFont
 import requests
 import math
+
+ASSET_DIR = 'assets'
+TEXT_FONT_TYPE = os.path.join(ASSET_DIR, 'SourceSansPro-Regular.otf')
 
 def radchar(data:dict,size:tuple,textcolour):
     #setup
     radarchart=Image.new("RGBA",size)
     rw,rh=radarchart.size
     chart=Image.new("RGBA",(rw,rh))
-    fnt = ImageFont.truetype("arial", rw//20)
+    fnt = ImageFont.truetype(TEXT_FONT_TYPE, rw//20)
 
     #math
     ox,oy=rw//2,rh//2
