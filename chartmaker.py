@@ -4,9 +4,11 @@ from PIL import Image, ImageDraw
 from PIL import ImageFont
 import requests
 import math
+from datetime import datetime
 
 ASSET_DIR = 'assets'
 TEXT_FONT_TYPE = os.path.join(ASSET_DIR, 'SourceSansPro-Regular.otf')
+IMAGES = 'images'
 
 def radchar(data:dict,size:tuple,textcolour):
     #setup
@@ -73,5 +75,6 @@ def make_chart(name:str,image_url:str,data:dict):
     main_img.paste(radarchart, (1050//4,660), mask=radarchart)
 
     #saves image
-    main_img.save_image()
-    return main_img.output_file
+    img_url=os.path.join("images", f'{name}_{datetime.now()}.png')
+    main_img.save(img_url)
+    return main_img.img_url
