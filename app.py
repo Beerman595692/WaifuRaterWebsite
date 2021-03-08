@@ -17,7 +17,7 @@ def picture():
     data = dict(request.form)
     d={key:value for key,value in data.items() if not key in ["name","imageURL"]}
     im=chartmaker.make_chart(data["name"],data["imageURL"],d)
-    return send_file(im, mimetype='image/png')
+    return send_file(im, mimetype='image/png',cache_timeout=1)
 
 if __name__ == '_main_':
     app.run()
