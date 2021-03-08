@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%block title%}Waifu Stat maker{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6" id="waifu">
+            <img id="woman">
+        </div>
+        <div class="col-lg-6">
+            <center>
+            <form action="/picture" method="POST">
+                <label for="name">Name</picture></label>
+                <input type="text" name="name" id="name"><br>
+
+                <label for="imageURL">Image</picture></label>
+                <input type="text" name="imageURL" id="imageURL"><br>
+                {% for name in ["boobs","face","sexyness","butt","cuteness","fanart"] %}
+                <div class="vsliders" id="{{name}}">
+                    <label for="{{name}}">{{name.title()}}</label>
+                    <input type="range" name="{{name}}" value="3" max=5 min=0 />
+                </div>
+                {% endfor %}
+                <br>
+                <input type="submit" value="Submit" class="btn btn-secondary">
+            </form>
+            </center>
+        </div>
+    </div>
+</div>
+{% endblock %}

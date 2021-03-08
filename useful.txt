@@ -1,0 +1,5 @@
+source virtual/Scripts/activate
+==flask==
+export FLASK_ENV=development
+export FLASK_APP=app.py
+flask run
