@@ -68,5 +68,5 @@ def make_chart(name:str,image_url:str,data:dict):
     main_img.paste(radarchart, (1050//4,660), mask=radarchart)
 
     #saves image
-    #main_img.save(f"charts/{name}.png", "PNG", quality=70)
-    return main_img
+    main_img.save()
+    return main_img.output_file
