@@ -21,3 +21,6 @@ def picture():
     im.save(img_io, "PNG", quality=70)
     img_io.seek(0)
     return send_file(img_io, mimetype='image/png')
+
+if __name__ == '_main_':
+    app.run()
