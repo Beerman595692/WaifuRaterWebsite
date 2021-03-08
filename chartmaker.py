@@ -77,4 +77,4 @@ def make_chart(name:str,image_url:str,data:dict):
     #saves image
     img_url=os.path.join("images", f'{name}_{datetime.now()}.png')
     main_img.save(img_url)
-    return main_img.img_url
+    return img_url
